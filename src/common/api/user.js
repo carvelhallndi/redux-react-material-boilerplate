@@ -6,6 +6,16 @@ export function getUser(token, callback) {
     if (!token) {
         return callback(false);
     }
+ setTimeout(() => {
+   callback({
+     name : 'John Smith',
+     dept : 'Web Team',
+     lastLogin : new Date(),
+     email : 'john@smith.com',
+     id : 'abcde1234'
+   });
+ }, 500);
+    /*
     request
         .get(`http://${config.apiHost}:${config.apiPort}/api/users/check?access_token=${token}`)
         .then(function (response) {
@@ -28,6 +38,7 @@ export function getUser(token, callback) {
             //   console.log(err);
             callback(false);
         });
+    */
 }
 //  return callback(false);
 //request()

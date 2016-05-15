@@ -23,6 +23,7 @@ class App extends Component {
   }
 
   componentWillReceiveProps(nextState) {
+    console.log("App.componentWillReceiveProps==================>" + nextState)
     if(nextState.user.token && !cookie.load('token')) {
       console.log('Setting up token in cookie');
       cookie.save('token', nextState.user.token);
